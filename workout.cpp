@@ -3,9 +3,9 @@
 #include <iostream>
 using namespace std;
 // тренируюсь создовать новые методы
-void char_messege(const char array[])
+void char_messege(const char array[])// здесь нужна констанка иначе выдает ошибку 
 {
-    cout << array << "\n" << endl;
+    printf("%s\n", array);
 }
 // создал функцию умножения
 float multiply(float x, float y) {
