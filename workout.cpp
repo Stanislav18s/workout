@@ -4,10 +4,9 @@
 #include "my finction.h"// засунул функции в заголовочный файл
 using namespace std;
 // отрабатывем передачу параметров в функцию указатели 
-void sum(int x,int y) {
-    cout << x + y << "\n" << endl;
 
-}
+// переработал функцию заменны на ссылки сама функция не может изменить значение переменной а ссылка может
+
 
 
 
@@ -15,8 +14,9 @@ void sum(int x,int y) {
 int main()
 {
     int b = 12;
-    int c = 13;
-    sum(b, c);
+    int c = 30;
+    zamena(&b, &c);
+    cout << b<<"\t"<< c << "\n" << endl;
     return 0;
 }
 

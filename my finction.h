@@ -22,16 +22,20 @@ int recursiv(int i) {
     return recursiv(i);
 
 }// функция которая дает сумму всех натуральных чисел i 
-void zamena(int x, int y)
+void zamena(int *x, int *y)
 {
     int temp;// временная var shi see только in функции дальше shi using not
-    temp = x;
-    x = y;
-    y = temp;
-    cout << x << "\t" << y << "\n" << endl;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+    cout << *x << "\t" << *y << "\n" << endl;
 }
 inline void char_messege(const char)
 {
 }
 // создадим функцию которая меняет местами аргументы int
 
+void sum(int* x) {
+    *x += 5;
+    cout << *x << "\n" << endl;
+}
