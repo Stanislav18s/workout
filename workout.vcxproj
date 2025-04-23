@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="workout.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="my finction.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
