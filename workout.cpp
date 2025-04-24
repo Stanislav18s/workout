@@ -3,17 +3,13 @@
 #include <iostream>
 #include <time.h>
 #include<string>
-/*Задание 2: Сортировка строк (char*)
-Цель: Работа с массивами строк и qsort.
+/*Задание 3: typedef для функции сравнения
+Цель: Упростить код с помощью typedef.
 Задача:
 
-Создайте массив строк: char *names[] = {"Alice", "Bob", "Charlie", "David"};
+Объявите тип Comparator как указатель на функцию сравнения (возвращает int, принимает два const void*).
 
-Отсортируйте его по алфавиту.
-
-Напишите функцию сравнения compare_strings.
-
-Подсказка: Используйте strcmp из <string.h>.*/
+Перепишите задание 1 или 2, используя Comparator.*/
 using namespace std;
 
 int compare_string(const void* a, const void* b)
