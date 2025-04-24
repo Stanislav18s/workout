@@ -11,21 +11,21 @@
 
 Перепишите задание 1 или 2, используя Comparator.*/
 using namespace std;
-
+typedef int(*Comparator)(const void*, const void*);
 int compare_string(const void* a, const void* b)
 {
 
-      return strcmp(*(const char**)b, *(const char**)a);
+      return strcmp(*(const char**)a, *(const char**)b);
 }
 
 
 
 int main()
-
 {
+    Comparator cpmp = compare_string;
    const char *names[] = {"Alisa","Bob","Charli","David"};
    size_t n = sizeof(names) / sizeof(names[0]);
-   qsort(names, n, sizeof(const char*), compare_string);
+   qsort(names, n, sizeof(const char*), cpmp);
    for (size_t i = 0;i < n;i++) {
        printf("%s\n", names[i]);
    }
