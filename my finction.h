@@ -39,3 +39,8 @@ void sum(int* x) {
     *x += 5;
     cout << *x << "\n" << endl;
 }
+void aray(size_t x, int* p) {
+    for (size_t i = 0; i < x; i++) {
+        p[i] += 5;
+    }
+}
