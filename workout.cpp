@@ -4,15 +4,34 @@
 #include <time.h>
 #include<string>
 using namespace std;
-/*Задание 4: Сортировка структур
-Цель: Работа с структурами и qsort.
+/*Задание 6: Универсальная сортировка
+Цель: Написать аналог qsort с использованием typedef и колбэков.
 Задача:
 
-Создайте структуру Person с полями name (строка) и age (int).
+Создайте функцию generic_sort, которая принимает:
 
-Создайте массив из 5 экземпляров Person.
+Массив void*,
 
-Отсортируйте массив по возрасту (по возрастанию), затем по имени (в алфавитном порядке).*/
+Количество элементов,
+
+Размер элемента,
+
+Функцию сравнения через typedef.
+
+Реализуйте сортировку пузырьком (для простоты).
+
+Протестируйте на массиве int и Person.*/
+typedef int sravni(const void* a, const void* b);
+void generic_sort(void*p, size_t n,size_t* c, sravni) {
+    int x = *(sravni);
+    for (size_t i = 0;i < n;i++) {
+        for (size_t j = 0;j < n;j++) {
+            if (x > 0)
+
+                
+        }
+    }
+}
 struct Person {
     char name[40];
   int age;
