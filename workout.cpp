@@ -3,32 +3,53 @@
 #include <iostream>
 #include <time.h>
 #include<string>
-/*Задание 3: typedef для функции сравнения
-Цель: Упростить код с помощью typedef.
+using namespace std;
+/*Задание 4: Сортировка структур
+Цель: Работа с структурами и qsort.
 Задача:
 
-Объявите тип Comparator как указатель на функцию сравнения (возвращает int, принимает два const void*).
+Создайте структуру Person с полями name (строка) и age (int).
 
-Перепишите задание 1 или 2, используя Comparator.*/
-using namespace std;
-typedef int(*Comparator)(const void*, const void*);
-int compare_string(const void* a, const void* b)
-{
+Создайте массив из 5 экземпляров Person.
 
-      return strcmp(*(const char**)a, *(const char**)b);
+Отсортируйте массив по возрасту (по возрастанию), затем по имени (в алфавитном порядке).*/
+struct Person {
+    char name[40];
+  int age;
+};
+int compare_age(const void* a, const void* b) {
+    const Person* p1 = (const Person*)a;
+    const Person* p2 = (const Person*)b;
+    return p1->age - p2->age;
 }
-
-
+int compare_name(const void* a, const void* b) {
+    const Person* p1 = (const Person*)a;
+    const Person* p2 = (const Person*)b;
+    return strcmp(p1->name, p2->name);
+}
 
 int main()
 {
-    Comparator cpmp = compare_string;
-   const char *names[] = {"Alisa","Bob","Charli","David"};
-   size_t n = sizeof(names) / sizeof(names[0]);
-   qsort(names, n, sizeof(const char*), cpmp);
-   for (size_t i = 0;i < n;i++) {
-       printf("%s\n", names[i]);
-   }
+    srand(time(NULL));
+    struct Person mas[] = { {"Silver",rand() % 50}, { "Tom",rand() % 40 }, {"Bob",rand() % 40}, {"Alice",rand() % 40}, {"Sam",rand() % 40} };
+    size_t n = sizeof(mas) / sizeof(mas[0]);
+    qsort(mas, n, sizeof(*mas), compare_name);
+    for (size_t i = 0;i < n;i++)
+    {
+        printf("name: %s age: %d \n", mas[i].name, mas[i].age);
+    }
+    cout << endl;
+    qsort(mas, n, sizeof(*mas), compare_age);
+    for (size_t i = 0;i < n;i++)
+    {
+        printf("name: %s age: %d \n", mas[i].name, mas[i].age);
+    }
+
+
       return 0;
 }
+
+
+
+
 
